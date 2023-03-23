@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Дана точка на плоскости с координатами (х, у). Составить программу, которая
+выдает одно из сообщений «Да», «Нет», «На границе» в зависимости от того, лежит
+ли точка внутри заштрихованной области, вне заштрихованной области или на ее
+границе.
+
+</value>
+  </data>
 </root>
