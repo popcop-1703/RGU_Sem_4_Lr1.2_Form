@@ -20,23 +20,49 @@ namespace RGU_Sem_4_Lr1._2_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label3.Text = "";
-            int n = 5;
-            int two = 2;
-            int three = 2;
-            for (int i = n; i >= 1; --i)
+            try
             {
-                for (int j = 1; j <= i; j++)
+                label3.Text = "";
+                int n;
+                if (textBox1.Text == "")
                 {
-                    label3.Text += Convert.ToString(two) + " ";
+                    n = 5;
                 }
-                label3.Text += "\n";
-                for (int k = 1; k <= i; k++)
+                else
                 {
-                    label3.Text += Convert.ToString(three + k) + " ";
+                    n = int.Parse(textBox1.Text);
                 }
-                three--;
-                label3.Text += "\n";
+
+                int two = 2;
+                int three = 2;
+                for (int i = n; i >= 1; --i)
+                {
+                    for (int j = 1; j <= i; j++)
+                    {
+                        label3.Text += Convert.ToString(two) + " ";
+                    }
+                    label3.Text += "\n";
+                    for (int k = 1; k <= i; k++)
+                    {
+                        label3.Text += Convert.ToString(three + k) + " ";
+                    }
+                    three--;
+                    label3.Text += "\n";
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Ошибка");
+            }
+            
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
             }
         }
     }

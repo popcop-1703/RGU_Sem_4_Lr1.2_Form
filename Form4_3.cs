@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -20,36 +21,56 @@ namespace RGU_Sem_4_Lr1._2_Form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string text = "";
-            int speed = 0;
-            text = textBox1.Text;
-            if (text == "а")
+            try
             {
-                speed = 60;
+                string text = "";
+                int speed = 0;
+                text = textBox1.Text;
+                if (text == "а" || text == "a")
+                {
+                    speed = 60;
+                }
+                else if (text == "в")
+                {
+                    speed = 20;
+                }
+                else if (text == "м" || text == "m")
+                {
+                    speed = 40;
+                }
+                else if (text == "с" || text == "c")
+                {
+                    speed = 200;
+                }
+                else if (text == "п")
+                {
+                    speed = 120;
+                }
+                else
+                {
+                    MessageBox.Show("Некорректный символ. \nСимвол вводится согласно условию", "Ошибка");
+                }
+                if (speed != 0)
+                {
+                    label7.Text = text + " скорость = " + speed;
+                }
             }
-            else if (text == "в")
+            catch
             {
-                speed = 20;
+                MessageBox.Show("Ошибка");
             }
-            else if (text == "м")
+            
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+           
+            string Symbol = e.KeyChar.ToString();
+
+            if (!Regex.Match(Symbol, @"[а-яА-Я]|[a-zA-Z]").Success && number != 8)
             {
-                speed = 40;
-            }
-            else if (text == "с")
-            {
-                speed = 200;
-            }
-            else if (text == "п")
-            {
-                speed = 120;
-            }
-            else
-            {
-                label7.Text = "Символ некорректный";
-            }
-            if (speed != 0)
-            {
-                label7.Text = text + " скорость = " + speed;
+                e.Handled = true;
             }
         }
     }
