@@ -48,9 +48,10 @@ namespace RGU_Sem_4_Lr1._2_Form
                     }
                     three--;
                     label3.Text += "\n";
+
                 }
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Ошибка");
             }

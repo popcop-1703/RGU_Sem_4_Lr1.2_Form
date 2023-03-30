@@ -51,6 +51,10 @@ namespace RGU_Sem_4_Lr1._2_Form
                     //label9.Text += i + "   " + x + "   " + Math.Round(y, 3) + "\n";
                     listBox1.Items.Add(i + "   " + x + "   " + Math.Round(y, 3));
                 }
+                if(a > b)
+                {
+                    MessageBox.Show("Невозможно вычислить f(x) \n a должно быть меньше b","Ошибка");
+                }
             }
             catch
             {

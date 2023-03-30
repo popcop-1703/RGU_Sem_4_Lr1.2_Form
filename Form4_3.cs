@@ -28,23 +28,23 @@ namespace RGU_Sem_4_Lr1._2_Form
                 text = textBox1.Text;
                 if (text == "а" || text == "a")
                 {
-                    speed = 60;
+                    speed = 160;
                 }
                 else if (text == "в")
                 {
-                    speed = 20;
+                    speed = 25;
                 }
                 else if (text == "м" || text == "m")
                 {
-                    speed = 40;
+                    speed = 200;
                 }
                 else if (text == "с" || text == "c")
                 {
-                    speed = 200;
+                    speed = 1500;
                 }
                 else if (text == "п")
                 {
-                    speed = 120;
+                    speed = 200;
                 }
                 else
                 {
